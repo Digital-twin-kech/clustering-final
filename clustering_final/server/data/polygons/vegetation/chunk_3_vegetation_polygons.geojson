@@ -1,0 +1,72 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1108455.0,
+              3885807.03
+            ],
+            [
+              1108451.85,
+              3885810.27
+            ],
+            [
+              1108450.93,
+              3885810.26
+            ],
+            [
+              1108450.86,
+              3885810.25
+            ],
+            [
+              1108449.91,
+              3885807.31
+            ],
+            [
+              1108450.0,
+              3885807.22
+            ],
+            [
+              1108452.83,
+              3885805.86
+            ],
+            [
+              1108454.0,
+              3885805.99
+            ],
+            [
+              1108455.0,
+              3885807.03
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "polygon_id": 1,
+        "class": "8_OtherVegetation",
+        "chunk": "chunk_3",
+        "area_m2": 13.15,
+        "perimeter_m": 14.49,
+        "point_count": 50,
+        "aspect_ratio": 1.15,
+        "extraction_method": "python_vegetation_enhanced"
+      }
+    }
+  ],
+  "properties": {
+    "class": "8_OtherVegetation",
+    "chunk": "chunk_3",
+    "extraction_method": "python_vegetation_enhanced_natural",
+    "results": {
+      "input_points": 32222,
+      "clean_points": 451,
+      "vegetation_areas": 1,
+      "total_area_m2": 13.15
+    }
+  }
+}

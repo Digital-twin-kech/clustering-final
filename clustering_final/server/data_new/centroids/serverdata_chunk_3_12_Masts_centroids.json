@@ -1,0 +1,312 @@
+{
+  "class": "12_Masts",
+  "class_id": 12,
+  "chunk": "chunk_3",
+  "clustering_method": "2D_projection_lightweight",
+  "parameters": {
+    "tolerance_2d": 1.0,
+    "min_points": 15,
+    "z_axis_eliminated": true
+  },
+  "utm_bounds": {
+    "min_x": 1108409.03,
+    "max_x": 1108517.648,
+    "min_y": 3885706.787,
+    "max_y": 3885866.035,
+    "min_z": 181.982,
+    "max_z": 196.148
+  },
+  "results": {
+    "input_points": 54850,
+    "clustered_points": 54841,
+    "instances_found": 22,
+    "coverage_percent": 100.0,
+    "original_instances": 27,
+    "filtering_applied": true
+  },
+  "centroids": [
+    {
+      "object_id": 21,
+      "cluster_id": 21,
+      "centroid_x": 1108486.571,
+      "centroid_y": 3885756.535,
+      "centroid_z": 183.545,
+      "point_count": 2383,
+      "relative_height_m": 1.6,
+      "point_density": 1524.6,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 9,
+      "cluster_id": 9,
+      "centroid_x": 1108467.744,
+      "centroid_y": 3885826.279,
+      "centroid_z": 185.878,
+      "point_count": 2170,
+      "relative_height_m": 3.9,
+      "point_density": 557.0,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 22,
+      "cluster_id": 22,
+      "centroid_x": 1108483.367,
+      "centroid_y": 3885766.033,
+      "centroid_z": 185.463,
+      "point_count": 2006,
+      "relative_height_m": 3.5,
+      "point_density": 576.3,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 12,
+      "cluster_id": 12,
+      "centroid_x": 1108433.165,
+      "centroid_y": 3885802.18,
+      "centroid_z": 189.936,
+      "point_count": 1635,
+      "relative_height_m": 8.0,
+      "point_density": 205.6,
+      "quality_score": 0.94,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 27,
+      "cluster_id": 27,
+      "centroid_x": 1108517.323,
+      "centroid_y": 3885720.884,
+      "centroid_z": 185.051,
+      "point_count": 1184,
+      "relative_height_m": 3.1,
+      "point_density": 385.8,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 7,
+      "cluster_id": 7,
+      "centroid_x": 1108448.539,
+      "centroid_y": 3885808.031,
+      "centroid_z": 183.14,
+      "point_count": 1145,
+      "relative_height_m": 1.2,
+      "point_density": 988.8,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 2,
+      "cluster_id": 2,
+      "centroid_x": 1108431.805,
+      "centroid_y": 3885831.494,
+      "centroid_z": 184.052,
+      "point_count": 916,
+      "relative_height_m": 2.1,
+      "point_density": 442.5,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 20,
+      "cluster_id": 20,
+      "centroid_x": 1108468.299,
+      "centroid_y": 3885780.302,
+      "centroid_z": 183.394,
+      "point_count": 854,
+      "relative_height_m": 1.4,
+      "point_density": 604.8,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 6,
+      "cluster_id": 6,
+      "centroid_x": 1108444.207,
+      "centroid_y": 3885815.346,
+      "centroid_z": 183.125,
+      "point_count": 709,
+      "relative_height_m": 1.1,
+      "point_density": 620.3,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 26,
+      "cluster_id": 26,
+      "centroid_x": 1108514.345,
+      "centroid_y": 3885725.018,
+      "centroid_z": 184.621,
+      "point_count": 671,
+      "relative_height_m": 2.6,
+      "point_density": 254.3,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 5,
+      "cluster_id": 5,
+      "centroid_x": 1108442.663,
+      "centroid_y": 3885815.636,
+      "centroid_z": 182.823,
+      "point_count": 634,
+      "relative_height_m": 0.8,
+      "point_density": 634.0,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 23,
+      "cluster_id": 23,
+      "centroid_x": 1108504.069,
+      "centroid_y": 3885715.122,
+      "centroid_z": 184.949,
+      "point_count": 486,
+      "relative_height_m": 3.0,
+      "point_density": 163.8,
+      "quality_score": 0.85,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 16,
+      "cluster_id": 16,
+      "centroid_x": 1108462.854,
+      "centroid_y": 3885804.095,
+      "centroid_z": 183.394,
+      "point_count": 436,
+      "relative_height_m": 1.4,
+      "point_density": 308.8,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 8,
+      "cluster_id": 8,
+      "centroid_x": 1108456.344,
+      "centroid_y": 3885811.14,
+      "centroid_z": 183.549,
+      "point_count": 374,
+      "relative_height_m": 1.6,
+      "point_density": 238.7,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 18,
+      "cluster_id": 18,
+      "centroid_x": 1108472.847,
+      "centroid_y": 3885798.346,
+      "centroid_z": 183.429,
+      "point_count": 309,
+      "relative_height_m": 1.4,
+      "point_density": 213.5,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 13,
+      "cluster_id": 13,
+      "centroid_x": 1108439.395,
+      "centroid_y": 3885796.086,
+      "centroid_z": 182.69,
+      "point_count": 247,
+      "relative_height_m": 0.7,
+      "point_density": 247.0,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 3,
+      "cluster_id": 3,
+      "centroid_x": 1108432.477,
+      "centroid_y": 3885828.077,
+      "centroid_z": 182.35,
+      "point_count": 244,
+      "relative_height_m": 0.4,
+      "point_density": 244.0,
+      "quality_score": 0.79,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 19,
+      "cluster_id": 19,
+      "centroid_x": 1108452.794,
+      "centroid_y": 3885775.132,
+      "centroid_z": 183.542,
+      "point_count": 223,
+      "relative_height_m": 1.6,
+      "point_density": 142.9,
+      "quality_score": 0.85,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 10,
+      "cluster_id": 10,
+      "centroid_x": 1108409.296,
+      "centroid_y": 3885865.764,
+      "centroid_z": 187.183,
+      "point_count": 221,
+      "relative_height_m": 5.2,
+      "point_density": 42.5,
+      "quality_score": 1.0,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 24,
+      "cluster_id": 24,
+      "centroid_x": 1108510.335,
+      "centroid_y": 3885706.936,
+      "centroid_z": 185.064,
+      "point_count": 164,
+      "relative_height_m": 3.1,
+      "point_density": 53.2,
+      "quality_score": 0.85,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 17,
+      "cluster_id": 17,
+      "centroid_x": 1108465.643,
+      "centroid_y": 3885808.895,
+      "centroid_z": 183.784,
+      "point_count": 142,
+      "relative_height_m": 1.8,
+      "point_density": 78.8,
+      "quality_score": 0.85,
+      "validation_status": "clean_mast"
+    },
+    {
+      "object_id": 4,
+      "cluster_id": 4,
+      "centroid_x": 1108434.522,
+      "centroid_y": 3885825.6,
+      "centroid_z": 182.915,
+      "point_count": 108,
+      "relative_height_m": 0.9,
+      "point_density": 108.0,
+      "quality_score": 0.85,
+      "validation_status": "clean_mast"
+    }
+  ],
+  "filtering": {
+    "method": "enhanced_mast_cleanup",
+    "filters": {
+      "min_points": 100,
+      "max_points": 3000,
+      "min_relative_height": 5.0,
+      "max_relative_height": 50.0,
+      "min_density": 10.0,
+      "max_density": 200.0,
+      "min_quality_score": 0.6
+    },
+    "statistics": {
+      "too_small": 2,
+      "too_large": 3,
+      "poor_quality": 0,
+      "duplicates_removed": 0,
+      "clean_masts": 22
+    }
+  }
+}

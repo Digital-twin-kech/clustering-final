@@ -1,0 +1,251 @@
+{
+  "class": "7_Trees",
+  "class_id": 7,
+  "chunk": "chunk_5",
+  "clustering_method": "2D_projection_lightweight",
+  "parameters": {
+    "tolerance_2d": 4.0,
+    "min_points": 30,
+    "z_axis_eliminated": true
+  },
+  "utm_bounds": {
+    "min_x": 1109580.274,
+    "max_x": 1109905.284,
+    "min_y": 3884754.489,
+    "max_y": 3885196.372,
+    "min_z": 201.139,
+    "max_z": 222.227
+  },
+  "results": {
+    "input_points": 1492236,
+    "clustered_points": 24274,
+    "instances_found": 28,
+    "coverage_percent": 1.6
+  },
+  "centroids": [
+    {
+      "object_id": 1,
+      "cluster_id": 1,
+      "centroid_x": 1109608.293,
+      "centroid_y": 3885081.894,
+      "centroid_z": 210.119,
+      "point_count": 2961
+    },
+    {
+      "object_id": 2,
+      "cluster_id": 2,
+      "centroid_x": 1109639.418,
+      "centroid_y": 3885093.592,
+      "centroid_z": 205.604,
+      "point_count": 380
+    },
+    {
+      "object_id": 3,
+      "cluster_id": 3,
+      "centroid_x": 1109652.965,
+      "centroid_y": 3885079.24,
+      "centroid_z": 205.649,
+      "point_count": 1058
+    },
+    {
+      "object_id": 4,
+      "cluster_id": 4,
+      "centroid_x": 1109630.76,
+      "centroid_y": 3885133.547,
+      "centroid_z": 204.253,
+      "point_count": 259
+    },
+    {
+      "object_id": 5,
+      "cluster_id": 5,
+      "centroid_x": 1109622.799,
+      "centroid_y": 3885124.506,
+      "centroid_z": 203.93,
+      "point_count": 588
+    },
+    {
+      "object_id": 6,
+      "cluster_id": 6,
+      "centroid_x": 1109680.421,
+      "centroid_y": 3885182.152,
+      "centroid_z": 205.455,
+      "point_count": 858
+    },
+    {
+      "object_id": 7,
+      "cluster_id": 7,
+      "centroid_x": 1109681.17,
+      "centroid_y": 3885193.069,
+      "centroid_z": 205.491,
+      "point_count": 310
+    },
+    {
+      "object_id": 8,
+      "cluster_id": 8,
+      "centroid_x": 1109627.581,
+      "centroid_y": 3885049.004,
+      "centroid_z": 203.6,
+      "point_count": 95
+    },
+    {
+      "object_id": 9,
+      "cluster_id": 9,
+      "centroid_x": 1109860.949,
+      "centroid_y": 3885006.647,
+      "centroid_z": 208.274,
+      "point_count": 409
+    },
+    {
+      "object_id": 10,
+      "cluster_id": 10,
+      "centroid_x": 1109902.16,
+      "centroid_y": 3885035.95,
+      "centroid_z": 208.217,
+      "point_count": 224
+    },
+    {
+      "object_id": 11,
+      "cluster_id": 11,
+      "centroid_x": 1109890.805,
+      "centroid_y": 3885022.258,
+      "centroid_z": 208.445,
+      "point_count": 168
+    },
+    {
+      "object_id": 12,
+      "cluster_id": 12,
+      "centroid_x": 1109795.114,
+      "centroid_y": 3884761.437,
+      "centroid_z": 207.278,
+      "point_count": 1667
+    },
+    {
+      "object_id": 13,
+      "cluster_id": 13,
+      "centroid_x": 1109764.659,
+      "centroid_y": 3884789.072,
+      "centroid_z": 210.251,
+      "point_count": 770
+    },
+    {
+      "object_id": 14,
+      "cluster_id": 14,
+      "centroid_x": 1109794.406,
+      "centroid_y": 3884780.72,
+      "centroid_z": 207.379,
+      "point_count": 333
+    },
+    {
+      "object_id": 15,
+      "cluster_id": 15,
+      "centroid_x": 1109802.407,
+      "centroid_y": 3884790.346,
+      "centroid_z": 209.432,
+      "point_count": 1278
+    },
+    {
+      "object_id": 16,
+      "cluster_id": 16,
+      "centroid_x": 1109813.75,
+      "centroid_y": 3884802.503,
+      "centroid_z": 208.478,
+      "point_count": 1291
+    },
+    {
+      "object_id": 17,
+      "cluster_id": 17,
+      "centroid_x": 1109822.312,
+      "centroid_y": 3884795.974,
+      "centroid_z": 207.654,
+      "point_count": 444
+    },
+    {
+      "object_id": 18,
+      "cluster_id": 18,
+      "centroid_x": 1109811.474,
+      "centroid_y": 3884781.401,
+      "centroid_z": 207.537,
+      "point_count": 404
+    },
+    {
+      "object_id": 19,
+      "cluster_id": 19,
+      "centroid_x": 1109808.017,
+      "centroid_y": 3884772.696,
+      "centroid_z": 207.579,
+      "point_count": 32
+    },
+    {
+      "object_id": 20,
+      "cluster_id": 20,
+      "centroid_x": 1109778.214,
+      "centroid_y": 3884860.719,
+      "centroid_z": 212.715,
+      "point_count": 100
+    },
+    {
+      "object_id": 21,
+      "cluster_id": 21,
+      "centroid_x": 1109825.848,
+      "centroid_y": 3884820.103,
+      "centroid_z": 210.563,
+      "point_count": 2259
+    },
+    {
+      "object_id": 22,
+      "cluster_id": 22,
+      "centroid_x": 1109814.2,
+      "centroid_y": 3884852.426,
+      "centroid_z": 210.41,
+      "point_count": 202
+    },
+    {
+      "object_id": 23,
+      "cluster_id": 23,
+      "centroid_x": 1109823.447,
+      "centroid_y": 3884862.182,
+      "centroid_z": 214.437,
+      "point_count": 2918
+    },
+    {
+      "object_id": 24,
+      "cluster_id": 24,
+      "centroid_x": 1109847.941,
+      "centroid_y": 3884783.5,
+      "centroid_z": 209.226,
+      "point_count": 3419
+    },
+    {
+      "object_id": 25,
+      "cluster_id": 25,
+      "centroid_x": 1109869.092,
+      "centroid_y": 3884780.284,
+      "centroid_z": 207.754,
+      "point_count": 160
+    },
+    {
+      "object_id": 26,
+      "cluster_id": 26,
+      "centroid_x": 1109838.054,
+      "centroid_y": 3884828.95,
+      "centroid_z": 210.351,
+      "point_count": 1109
+    },
+    {
+      "object_id": 27,
+      "cluster_id": 27,
+      "centroid_x": 1109852.293,
+      "centroid_y": 3884826.392,
+      "centroid_z": 207.878,
+      "point_count": 317
+    },
+    {
+      "object_id": 28,
+      "cluster_id": 28,
+      "centroid_x": 1109843.905,
+      "centroid_y": 3884835.878,
+      "centroid_z": 208.92,
+      "point_count": 261
+    }
+  ]
+}

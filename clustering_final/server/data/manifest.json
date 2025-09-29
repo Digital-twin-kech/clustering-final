@@ -1,0 +1,25 @@
+{
+  "data_structure": {
+    "centroids": {
+      "masts": "Mast centroids (point data) in JSON format",
+      "trees": "Tree centroids (point data) in JSON format"
+    },
+    "polygons": {
+      "buildings": "Building polygon features in GeoJSON format",
+      "vegetation": "Other vegetation polygon features in GeoJSON format"
+    },
+    "lines": {
+      "wires": "Wire line features in GeoJSON format"
+    }
+  },
+  "coordinate_system": "UTM Zone 29N (EPSG:29180) for Morocco region",
+  "file_naming": "{chunk}_{class}_{type}.{extension}",
+  "statistics": {
+    "mast_centroid_files": 6,
+    "tree_centroid_files": 6,
+    "building_polygon_files": 6,
+    "vegetation_polygon_files": 6,
+    "wire_line_files": 6,
+    "total_files": 30
+  }
+}

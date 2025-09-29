@@ -1,0 +1,25 @@
+# Ignore output directories but keep metadata
+out/chunks/
+out/*.laz
+outlast/
+
+# Ignore temporary files
+*.tmp
+*.log
+/tmp/
+
+# Ignore pipeline files
+pipeline_*.json
+
+# Ignore backup files
+*.bak
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo

@@ -1,0 +1,41 @@
+# Large data files
+*.laz
+*.las
+
+# Data directories
+datasetclasified/
+out/
+out_clean/
+temp/
+chunks/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Large output files
+*.bin
+*.dump

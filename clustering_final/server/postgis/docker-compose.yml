@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgis:
+    image: postgis/postgis:15-3.3
+    container_name: lidar_postgis
+    environment:
+      POSTGRES_DB: lidar_clustering
+      POSTGRES_USER: lidar_user
+      POSTGRES_PASSWORD: lidar_pass
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lidar_user -d lidar_clustering"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  lidar_api:
+    build: .
+    container_name: lidar_api
+    depends_on:
+      postgis:
+        condition: service_healthy
+    ports:
+      - "8002:8000"
+    environment:
+      - DATABASE_URL=postgresql://lidar_user:lidar_pass@postgis:5432/lidar_clustering
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    command: uvicorn lidar_postgis_server:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  postgres_data:

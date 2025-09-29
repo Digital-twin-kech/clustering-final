@@ -1,0 +1,87 @@
+{
+  "dataset_info": {
+    "name": "New LiDAR Dataset Processing Results",
+    "source": "/home/prodair/Desktop/clustering/datasetclasified/new_data",
+    "processing_date": "2025-09-26",
+    "chunks_processed": [1, 2, 3, 4, 5],
+    "coordinate_system": "UTM Zone 29N (EPSG:29180)",
+    "region": "Western Morocco"
+  },
+  "processing_summary": {
+    "total_chunks": 5,
+    "classes_processed": ["Trees", "Masts", "Buildings", "Vegetation", "Wires"],
+    "processing_methods": {
+      "trees": "Lightweight 2D projection clustering with sampling",
+      "masts": "Lightweight 2D projection clustering with sampling",
+      "buildings": "Enhanced instance-based polygon extraction",
+      "vegetation": "Natural boundary detection with curved polygons",
+      "wires": "Height-aware line segmentation clustering"
+    }
+  },
+  "data_structure": {
+    "centroids": {
+      "description": "Point features (Trees + Masts)",
+      "count": 10,
+      "files": [
+        "chunk_1_7_Trees_centroids.json",
+        "chunk_1_12_Masts_centroids.json",
+        "chunk_2_7_Trees_centroids.json",
+        "chunk_2_12_Masts_centroids.json",
+        "chunk_3_7_Trees_centroids.json",
+        "chunk_3_12_Masts_centroids.json",
+        "chunk_4_7_Trees_centroids.json",
+        "chunk_4_12_Masts_centroids.json",
+        "chunk_5_7_Trees_centroids.json",
+        "chunk_5_12_Masts_centroids.json"
+      ]
+    },
+    "polygons": {
+      "buildings": {
+        "description": "Building footprint polygons",
+        "count": 5,
+        "files": [
+          "chunk_1_buildings_polygons.geojson",
+          "chunk_2_buildings_polygons.geojson",
+          "chunk_3_buildings_polygons.geojson",
+          "chunk_4_buildings_polygons.geojson",
+          "chunk_5_buildings_polygons.geojson"
+        ]
+      },
+      "vegetation": {
+        "description": "Vegetation area polygons",
+        "count": 4,
+        "note": "chunk_3 vegetation not found",
+        "files": [
+          "chunk_1_vegetation_polygons.geojson",
+          "chunk_2_vegetation_polygons.geojson",
+          "chunk_4_vegetation_polygons.geojson",
+          "chunk_5_vegetation_polygons.geojson"
+        ]
+      }
+    },
+    "lines": {
+      "wires": {
+        "description": "Wire infrastructure lines",
+        "count": 5,
+        "files": [
+          "chunk_1_wires_lines.geojson",
+          "chunk_2_wires_lines.geojson",
+          "chunk_3_wires_lines.geojson",
+          "chunk_4_wires_lines.geojson",
+          "chunk_5_wires_lines.geojson"
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "files_total": 24,
+    "centroids_files": 10,
+    "polygon_files": 9,
+    "line_files": 5
+  },
+  "next_steps": [
+    "Validate in local visualization server",
+    "Push to production PostGIS database",
+    "Update production visualization"
+  ]
+}

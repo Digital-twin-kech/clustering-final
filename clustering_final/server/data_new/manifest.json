@@ -1,0 +1,94 @@
+{
+  "dataset_info": {
+    "name": "Complete New LiDAR Dataset Processing Results - All Chunks",
+    "source": "/home/prodair/Desktop/clustering/datasetclasified/new_data/new_data",
+    "processing_date": "2025-09-26",
+    "chunks_processed": [2, 5, 6, 7, 8],
+    "coordinate_system": "UTM Zone 29N (EPSG:29180)",
+    "region": "Western Morocco"
+  },
+  "processing_summary": {
+    "total_chunks": 5,
+    "chunks_available": ["chunk_2", "chunk_5", "chunk_6", "chunk_7", "chunk_8"],
+    "classes_processed": ["Trees", "Masts", "Buildings", "Vegetation", "Wires"],
+    "processing_methods": {
+      "trees": "Lightweight 2D projection clustering with sampling (optimized)",
+      "masts": "Lightweight 2D projection clustering with sampling (optimized)",
+      "buildings": "Enhanced instance-based polygon extraction",
+      "vegetation": "Natural boundary detection with curved polygons",
+      "wires": "Height-aware line segmentation clustering"
+    }
+  },
+  "data_structure": {
+    "centroids": {
+      "description": "Point features (Trees + Masts)",
+      "count": 10,
+      "files": [
+        "newdata_chunk_2_7_Trees_centroids.json",
+        "newdata_chunk_2_12_Masts_centroids.json",
+        "newdata_chunk_5_7_Trees_centroids.json",
+        "newdata_chunk_5_12_Masts_centroids.json",
+        "newdata_chunk_6_7_Trees_centroids.json",
+        "newdata_chunk_6_12_Masts_centroids.json",
+        "newdata_chunk_7_7_Trees_centroids.json",
+        "newdata_chunk_7_12_Masts_centroids.json",
+        "newdata_chunk_8_7_Trees_centroids.json",
+        "newdata_chunk_8_12_Masts_centroids.json"
+      ]
+    },
+    "polygons": {
+      "buildings": {
+        "description": "Building footprint polygons",
+        "count": 5,
+        "files": [
+          "newdata_chunk_2_buildings_polygons.geojson",
+          "newdata_chunk_5_buildings_polygons.geojson",
+          "newdata_chunk_6_buildings_polygons.geojson",
+          "newdata_chunk_7_buildings_polygons.geojson",
+          "newdata_chunk_8_buildings_polygons.geojson"
+        ]
+      },
+      "vegetation": {
+        "description": "Vegetation area polygons",
+        "count": 3,
+        "files": [
+          "newdata_chunk_2_vegetation_polygons.geojson",
+          "newdata_chunk_5_vegetation_polygons.geojson",
+          "newdata_chunk_6_vegetation_polygons.geojson"
+        ],
+        "note": "Chunks 7 and 8 had insufficient vegetation for polygon extraction"
+      }
+    },
+    "lines": {
+      "wires": {
+        "description": "Wire infrastructure lines",
+        "count": 5,
+        "files": [
+          "newdata_chunk_2_wires_lines.geojson",
+          "newdata_chunk_5_wires_lines.geojson",
+          "newdata_chunk_6_wires_lines.geojson",
+          "newdata_chunk_7_wires_lines.geojson",
+          "newdata_chunk_8_wires_lines.geojson"
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "files_total": 23,
+    "centroids_files": 10,
+    "polygon_files": 8,
+    "line_files": 5,
+    "data_quality": "High - comprehensive coverage across all chunks"
+  },
+  "coordinate_conversion": {
+    "input": "UTM Zone 29N (EPSG:29180)",
+    "output": "WGS84 (EPSG:4326) for web visualization",
+    "transformation": "Automatic via PyProj"
+  },
+  "next_steps": [
+    "Update visualization server to load expanded dataset",
+    "Validate in local visualization at http://localhost:8001",
+    "Push to production PostGIS database at 13.221.230.78",
+    "Update production visualization with complete dataset"
+  ]
+}
