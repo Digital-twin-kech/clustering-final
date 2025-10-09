@@ -1,0 +1,47 @@
+{
+  "dataset": "berkan_buildings_fixed",
+  "extraction_method": "python_instance_enhanced_fixed1",
+  "chunks": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "total_buildings": 169,
+  "files": 9,
+  "structure": {
+    "polygons/buildings/": "Building footprint polygons (GeoJSON)"
+  },
+  "datasets": {
+    "berkan": {
+      "chunks": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "buildings": 169
+    },
+    "newdata": {
+      "chunks": [
+        2,
+        5,
+        6,
+        7,
+        8
+      ],
+      "buildings": 127
+    }
+  },
+  "total_buildings_combined": 296
+}

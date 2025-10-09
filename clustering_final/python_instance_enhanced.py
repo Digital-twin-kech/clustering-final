@@ -17,17 +17,38 @@ import subprocess
 import os
 import math
 
-def extract_instance_buildings_enhanced(chunk_name):
-    """Extract building instances with aggressive separation and rectangular shapes"""
+def extract_instance_buildings_enhanced(chunk_path):
+    """
+    Extract building instances with aggressive separation and rectangular shapes
+
+    Args:
+        chunk_path: Path to chunk directory (e.g., /path/to/chunk_1 or /path/to/chunk_1/compressed/filtred_by_classes)
+    """
 
     try:
+        # Normalize the path - detect if it's the chunk root or filtred_by_classes
+        chunk_path = os.path.abspath(chunk_path)
+
+        if chunk_path.endswith('/compressed/filtred_by_classes'):
+            # Path is already pointing to filtred_by_classes
+            classes_base = chunk_path
+            chunk_name = os.path.basename(os.path.dirname(os.path.dirname(chunk_path)))
+        elif os.path.exists(os.path.join(chunk_path, 'compressed/filtred_by_classes')):
+            # Path is chunk root directory
+            classes_base = os.path.join(chunk_path, 'compressed/filtred_by_classes')
+            chunk_name = os.path.basename(chunk_path)
+        else:
+            print(f"❌ Invalid path structure. Expected chunk directory or filtred_by_classes directory")
+            return 0
+
         # Paths
-        laz_file = f"/home/prodair/Desktop/clustering/datasetclasified/new_data/new_data/{chunk_name}/compressed/filtred_by_classes/6_Buildings/6_Buildings.laz"
-        output_dir = f"/home/prodair/Desktop/clustering/datasetclasified/new_data/new_data/{chunk_name}/compressed/filtred_by_classes/6_Buildings/polygons"
+        laz_file = f"{classes_base}/6_Buildings/6_Buildings.laz"
+        output_dir = f"{classes_base}/6_Buildings/polygons"
         output_file = f"{output_dir}/6_Buildings_polygons.geojson"
 
         print(f"\n🏢 === ENHANCED INSTANCE BUILDING EXTRACTION ===")
         print(f"📍 Chunk: {chunk_name}")
+        print(f"📂 Base path: {classes_base}")
         print(f"🎯 Method: Tight clustering + rectangular polygons + overlap prevention")
 
         # Create output directory
@@ -555,12 +576,20 @@ def utm_to_wgs84_simple(utm_x, utm_y):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 python_instance_enhanced.py <chunk_name>")
-        print("Example: python3 python_instance_enhanced.py chunk_1")
+        print("Usage: python3 python_instance_enhanced.py <chunk_path>")
+        print("Examples:")
+        print("  python3 python_instance_enhanced.py /path/to/chunk_1")
+        print("  python3 python_instance_enhanced.py /path/to/chunk_1/compressed/filtred_by_classes")
         sys.exit(1)
 
-    chunk_name = sys.argv[1]
-    result = extract_instance_buildings_enhanced(chunk_name)
+    chunk_path = sys.argv[1]
+
+    # Validate path exists
+    if not os.path.exists(chunk_path):
+        print(f"❌ Path not found: {chunk_path}")
+        sys.exit(1)
+
+    result = extract_instance_buildings_enhanced(chunk_path)
 
     if result > 0:
         print(f"\n🎉 Success! Extracted {result} building instances")

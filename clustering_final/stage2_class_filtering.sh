@@ -1,4 +1,4 @@
-#!/bin/bash
+ç#!/bin/bash
 
 # ==============================================================================
 # STAGE 2: CLASS FILTERING SCRIPT (Based on production version)

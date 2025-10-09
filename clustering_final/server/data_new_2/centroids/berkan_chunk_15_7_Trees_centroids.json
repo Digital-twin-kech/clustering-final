@@ -1,0 +1,179 @@
+{
+  "class": "7_Trees",
+  "class_id": 7,
+  "chunk": "chunk_15",
+  "clustering_method": "2D_projection_lightweight",
+  "parameters": {
+    "tolerance_2d": 4.0,
+    "min_points": 30,
+    "z_axis_eliminated": true
+  },
+  "utm_bounds": {
+    "min_x": 1109845.267,
+    "max_x": 1110213.04,
+    "min_y": 3884723.031,
+    "max_y": 3884808.551,
+    "min_z": 207.076,
+    "max_z": 223.043
+  },
+  "results": {
+    "input_points": 1880955,
+    "clustered_points": 19741,
+    "instances_found": 19,
+    "coverage_percent": 1.0
+  },
+  "centroids": [
+    {
+      "object_id": 1,
+      "cluster_id": 1,
+      "centroid_x": 1109856.067,
+      "centroid_y": 3884774.677,
+      "centroid_z": 216.571,
+      "point_count": 149
+    },
+    {
+      "object_id": 2,
+      "cluster_id": 2,
+      "centroid_x": 1110048.034,
+      "centroid_y": 3884802.02,
+      "centroid_z": 217.581,
+      "point_count": 580
+    },
+    {
+      "object_id": 3,
+      "cluster_id": 3,
+      "centroid_x": 1110057.282,
+      "centroid_y": 3884800.075,
+      "centroid_z": 217.323,
+      "point_count": 554
+    },
+    {
+      "object_id": 4,
+      "cluster_id": 4,
+      "centroid_x": 1110066.981,
+      "centroid_y": 3884799.821,
+      "centroid_z": 216.837,
+      "point_count": 797
+    },
+    {
+      "object_id": 5,
+      "cluster_id": 5,
+      "centroid_x": 1110076.914,
+      "centroid_y": 3884798.154,
+      "centroid_z": 216.948,
+      "point_count": 1033
+    },
+    {
+      "object_id": 6,
+      "cluster_id": 6,
+      "centroid_x": 1110074.382,
+      "centroid_y": 3884807.684,
+      "centroid_z": 220.666,
+      "point_count": 40
+    },
+    {
+      "object_id": 7,
+      "cluster_id": 7,
+      "centroid_x": 1110086.289,
+      "centroid_y": 3884796.099,
+      "centroid_z": 218.756,
+      "point_count": 1039
+    },
+    {
+      "object_id": 8,
+      "cluster_id": 8,
+      "centroid_x": 1110093.967,
+      "centroid_y": 3884782.858,
+      "centroid_z": 220.207,
+      "point_count": 797
+    },
+    {
+      "object_id": 9,
+      "cluster_id": 9,
+      "centroid_x": 1110106.949,
+      "centroid_y": 3884792.198,
+      "centroid_z": 218.159,
+      "point_count": 1673
+    },
+    {
+      "object_id": 10,
+      "cluster_id": 10,
+      "centroid_x": 1110116.722,
+      "centroid_y": 3884788.935,
+      "centroid_z": 217.634,
+      "point_count": 1292
+    },
+    {
+      "object_id": 11,
+      "cluster_id": 11,
+      "centroid_x": 1110125.659,
+      "centroid_y": 3884787.672,
+      "centroid_z": 218.585,
+      "point_count": 1757
+    },
+    {
+      "object_id": 12,
+      "cluster_id": 12,
+      "centroid_x": 1110139.73,
+      "centroid_y": 3884784.703,
+      "centroid_z": 218.538,
+      "point_count": 3134
+    },
+    {
+      "object_id": 13,
+      "cluster_id": 13,
+      "centroid_x": 1110154.037,
+      "centroid_y": 3884782.074,
+      "centroid_z": 218.298,
+      "point_count": 1149
+    },
+    {
+      "object_id": 14,
+      "cluster_id": 14,
+      "centroid_x": 1110163.305,
+      "centroid_y": 3884779.872,
+      "centroid_z": 219.002,
+      "point_count": 1601
+    },
+    {
+      "object_id": 15,
+      "cluster_id": 15,
+      "centroid_x": 1110173.036,
+      "centroid_y": 3884778.105,
+      "centroid_z": 218.305,
+      "point_count": 1203
+    },
+    {
+      "object_id": 16,
+      "cluster_id": 16,
+      "centroid_x": 1110182.646,
+      "centroid_y": 3884776.768,
+      "centroid_z": 218.305,
+      "point_count": 1016
+    },
+    {
+      "object_id": 17,
+      "cluster_id": 17,
+      "centroid_x": 1110192.015,
+      "centroid_y": 3884774.498,
+      "centroid_z": 218.787,
+      "point_count": 945
+    },
+    {
+      "object_id": 18,
+      "cluster_id": 18,
+      "centroid_x": 1110202.036,
+      "centroid_y": 3884773.111,
+      "centroid_z": 218.08,
+      "point_count": 608
+    },
+    {
+      "object_id": 19,
+      "cluster_id": 19,
+      "centroid_x": 1110211.347,
+      "centroid_y": 3884773.223,
+      "centroid_z": 217.898,
+      "point_count": 374
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "pipeline": [
+    {
+      "type": "readers.las",
+      "filename": "CLASS_DIR/class.laz"
+    },
+    {
+      "type": "filters.dbscan",
+      "eps": "EPS",
+      "min_points": "MINPTS"
+    },
+    {
+      "type": "filters.groupby",
+      "dimension": "ClusterID"
+    },
+    {
+      "type": "filters.stats",
+      "dimensions": "X,Y,Z,Intensity,ClusterID"
+    },
+    {
+      "type": "filters.info"
+    },
+    {
+      "type": "writers.las",
+      "filename": "CLASS_DIR/instances/cluster_#.laz",
+      "compression": true,
+      "forward": "all"
+    }
+  ]
+}

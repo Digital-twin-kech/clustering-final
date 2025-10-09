@@ -1,0 +1,23 @@
+{
+  "pipeline": [
+    "CHUNK_LIST_PLACEHOLDER",
+    {
+      "type": "filters.expression",
+      "expression": "Classification == CLASSCODE"
+    },
+    {
+      "type": "filters.stats",
+      "dimensions": "X,Y,Z,Intensity,Classification",
+      "enumerate": "Classification"
+    },
+    {
+      "type": "filters.info"
+    },
+    {
+      "type": "writers.las",
+      "filename": "OUTDIR/class.laz",
+      "compression": true,
+      "forward": "all"
+    }
+  ]
+}

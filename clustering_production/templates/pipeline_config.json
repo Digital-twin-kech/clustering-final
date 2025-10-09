@@ -1,0 +1,157 @@
+{
+  "pipeline_configuration": {
+    "version": "1.0",
+    "description": "LiDAR Clustering Pipeline Configuration Template",
+    "last_updated": "2025-09-17"
+  },
+
+  "stage1_chunking": {
+    "default_chunk_size": 10000000,
+    "max_chunk_size": 15000000,
+    "min_chunk_size": 5000000,
+    "overlap_points": 0,
+    "output_format": "LAZ"
+  },
+
+  "stage2_class_extraction": {
+    "mobile_mapping_classes": {
+      "2": {"name": "Ground", "skip": true, "reason": "too_large"},
+      "3": {"name": "Low_Vegetation", "skip": true, "reason": "too_large"},
+      "4": {"name": "Medium_Vegetation", "skip": true, "reason": "too_large"},
+      "5": {"name": "High_Vegetation", "skip": true, "reason": "too_large"},
+      "6": {"name": "Buildings", "skip": true, "reason": "too_large"},
+      "7": {"name": "Trees", "skip": false, "cluster": true},
+      "8": {"name": "OtherVegetation", "skip": false, "cluster": true},
+      "9": {"name": "Water", "skip": true, "reason": "not_suitable"},
+      "10": {"name": "TrafficSigns", "skip": false, "cluster": true},
+      "11": {"name": "Wires", "skip": false, "cluster": true},
+      "12": {"name": "Masts", "skip": false, "cluster": true},
+      "13": {"name": "Bridges", "skip": true, "reason": "too_large"},
+      "15": {"name": "2Wheel", "skip": false, "cluster": true},
+      "16": {"name": "Mobile4w", "skip": false, "cluster": true},
+      "17": {"name": "Stationary4w", "skip": false, "cluster": true},
+      "18": {"name": "Bus", "skip": false, "cluster": true},
+      "19": {"name": "Pedestrian", "skip": false, "cluster": true},
+      "40": {"name": "TreeTrunks", "skip": false, "cluster": true},
+      "64": {"name": "Wire_Guard", "skip": true, "reason": "infrastructure"},
+      "65": {"name": "Wire_Conductor", "skip": true, "reason": "infrastructure"}
+    }
+  },
+
+  "stage3_clustering": {
+    "algorithm": "EUCLIDEAN",
+    "parameters_by_class": {
+      "7_Trees": {
+        "tolerance": 1.5,
+        "min_points": 50,
+        "description": "Tree crowns, medium tolerance"
+      },
+      "10_TrafficSigns": {
+        "tolerance": 1.0,
+        "min_points": 30,
+        "description": "Traffic signs, tight tolerance"
+      },
+      "11_Wires": {
+        "tolerance": 2.0,
+        "min_points": 20,
+        "description": "Wire segments, loose tolerance"
+      },
+      "12_Masts": {
+        "tolerance": 0.5,
+        "min_points": 30,
+        "description": "Poles and masts, very tight tolerance"
+      },
+      "15_2Wheel": {
+        "tolerance": 0.5,
+        "min_points": 30,
+        "description": "Motorcycles, bicycles"
+      },
+      "16_Mobile4w": {
+        "tolerance": 1.0,
+        "min_points": 50,
+        "description": "Cars in motion"
+      },
+      "17_Stationary4w": {
+        "tolerance": 1.0,
+        "min_points": 50,
+        "description": "Parked vehicles"
+      },
+      "40_TreeTrunks": {
+        "tolerance": 1.0,
+        "min_points": 30,
+        "description": "Tree trunk segments"
+      }
+    },
+    "default_parameters": {
+      "tolerance": 1.0,
+      "min_points": 30
+    }
+  },
+
+  "stage4_cleaning": {
+    "quality_criteria": {
+      "12_Masts": {
+        "min_points": 100,
+        "min_height": 2.0,
+        "max_width": 2.0,
+        "description": "Poles must be tall and thin"
+      },
+      "15_2Wheel": {
+        "min_points": 80,
+        "min_height": 0.8,
+        "max_height": 2.0,
+        "description": "Motorcycles, reasonable size"
+      },
+      "16_Mobile4w": {
+        "min_points": 200,
+        "min_height": 0.8,
+        "max_height": 3.0,
+        "description": "Cars, substantial point count"
+      },
+      "17_Stationary4w": {
+        "min_points": 200,
+        "min_height": 0.8,
+        "max_height": 3.0,
+        "description": "Parked cars"
+      },
+      "7_Trees_Combined": {
+        "min_points": 150,
+        "min_height": 2.0,
+        "description": "Combined trees, substantial vegetation"
+      }
+    },
+    "merge_criteria": {
+      "max_distance": 2.5,
+      "priority_classes": ["12_Masts", "15_2Wheel"],
+      "merge_small_instances": true,
+      "small_instance_threshold": 200
+    }
+  },
+
+  "utilities": {
+    "tree_combining": {
+      "enabled": true,
+      "source_classes": ["7_Trees", "40_TreeTrunks"],
+      "target_class": "7_Trees_Combined",
+      "remove_originals": false
+    },
+    "format_conversion": {
+      "las_compression": false,
+      "preserve_extra_dims": true,
+      "batch_size": 50
+    },
+    "analysis": {
+      "generate_statistics": true,
+      "create_visualizations": false,
+      "export_formats": ["JSON", "CSV"]
+    }
+  },
+
+  "system_settings": {
+    "temp_directory": "temp",
+    "max_memory_usage": "8GB",
+    "parallel_processing": false,
+    "log_level": "INFO",
+    "cleanup_temp_files": true
+  }
+}

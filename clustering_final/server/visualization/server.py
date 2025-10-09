@@ -38,7 +38,7 @@ WGS84 = pyproj.CRS("EPSG:4326")    # WGS84 lat/lon
 transformer = pyproj.Transformer.from_crs(UTM_29N, WGS84, always_xy=True)
 
 # Data directory configuration
-DATA_DIR = "./data_new"
+DATA_DIR = "/home/prodair/Downloads/data-last-berkan/data-last-berkan/data"  # Complete unified data
 
 def convert_utm_to_wgs84(utm_x: float, utm_y: float) -> tuple:
     """Convert UTM Zone 29N coordinates to WGS84 lat/lon"""
@@ -68,9 +68,16 @@ def load_centroids_data():
             filename = os.path.basename(json_file)
             parts = filename.replace('.json', '').split('_')
 
+            # Handle both formats: "chunk_1_7_Trees" and "berkan_chunk_9_7_Trees"
             if len(parts) >= 2:
-                chunk = parts[0] + '_' + parts[1]  # e.g., chunk_1
-                class_name = '_'.join(parts[2:]).replace('_centroids', '')
+                if parts[0] == "berkan" or parts[0] == "olddata" or parts[0] == "newdata" or parts[0] == "serverdata":
+                    # Format: berkan_chunk_9_7_Trees_centroids.json
+                    chunk = parts[1] + '_' + parts[2]  # e.g., chunk_9
+                    class_name = '_'.join(parts[3:]).replace('_centroids', '')
+                else:
+                    # Format: chunk_1_7_Trees_centroids.json
+                    chunk = parts[0] + '_' + parts[1]  # e.g., chunk_1
+                    class_name = '_'.join(parts[2:]).replace('_centroids', '')
 
                 key = f"{chunk}_{class_name}"
 
@@ -141,7 +148,13 @@ def load_polygon_data():
 
                 # Extract chunk from filename
                 filename = os.path.basename(geojson_file)
-                chunk = filename.split('_')[0] + '_' + filename.split('_')[1]  # chunk_1
+                parts = filename.split('_')
+
+                # Handle both formats: "chunk_1_buildings" and "berkan_chunk_9_buildings"
+                if parts[0] in ["berkan", "olddata", "newdata", "serverdata"]:
+                    chunk = parts[1] + '_' + parts[2]  # e.g., chunk_9
+                else:
+                    chunk = parts[0] + '_' + parts[1]  # chunk_1
 
                 key = f"{chunk}_{category}"
 
@@ -208,7 +221,13 @@ def load_lines_data():
 
             # Extract chunk from filename
             filename = os.path.basename(geojson_file)
-            chunk = filename.split('_')[0] + '_' + filename.split('_')[1]  # chunk_1
+            parts = filename.split('_')
+
+            # Handle both formats: "chunk_1_wires" and "berkan_chunk_9_wires"
+            if parts[0] in ["berkan", "olddata", "newdata", "serverdata"]:
+                chunk = parts[1] + '_' + parts[2]  # e.g., chunk_9
+            else:
+                chunk = parts[0] + '_' + parts[1]  # chunk_1
 
             key = f"{chunk}_wires"
 
@@ -323,7 +342,9 @@ async def root():
             '2_7_Trees': '#228B22', '5_7_Trees': '#228B22', '7_Trees': '#228B22', 'trees': '#228B22',
             'buildings': '#8B4513', '6_Buildings': '#8B4513',
             'vegetation': '#90EE90', '8_OtherVegetation': '#90EE90',
-            'wires': '#FF6600', '11_Wires': '#FF6600'
+            'wires': '#FF6600', '11_Wires': '#FF6600',
+            '9_TrafficLights': '#FFD700', 'trafficlights': '#FFD700',  // Gold/Yellow for traffic lights
+            '10_TrafficSigns': '#1E90FF', 'trafficsigns': '#1E90FF'    // Dodger Blue for traffic signs
         };
 
         function initMap() {

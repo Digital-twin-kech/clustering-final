@@ -1,0 +1,35 @@
+{
+  "class": "12_Masts",
+  "class_id": 12,
+  "chunk": "chunk_17",
+  "clustering_method": "2D_projection_lightweight",
+  "parameters": {
+    "tolerance_2d": 1.0,
+    "min_points": 15,
+    "z_axis_eliminated": true
+  },
+  "utm_bounds": {
+    "min_x": 1110359.446,
+    "max_x": 1110409.345,
+    "min_y": 3884748.442,
+    "max_y": 3884850.795,
+    "min_z": 216.035,
+    "max_z": 230.435
+  },
+  "results": {
+    "input_points": 18626,
+    "clustered_points": 49,
+    "instances_found": 1,
+    "coverage_percent": 0.3
+  },
+  "centroids": [
+    {
+      "object_id": 1,
+      "cluster_id": 1,
+      "centroid_x": 1110365.487,
+      "centroid_y": 3884847.627,
+      "centroid_z": 220.119,
+      "point_count": 49
+    }
+  ]
+}

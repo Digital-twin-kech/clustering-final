@@ -1,0 +1,22 @@
+{
+  "pipeline": [
+    {
+      "type": "readers.las",
+      "filename": "/home/prodair/Desktop/MORIUS5090/clustering/out/job-20250911110357/chunks/cloud_point_part_1/part_5.laz"
+    },
+    {
+      "type": "readers.las", 
+      "filename": "/home/prodair/Desktop/MORIUS5090/clustering/out/job-20250911110357/chunks/cloud_point_part_1/part_2.laz"
+    },
+    {
+      "type": "filters.expression",
+      "expression": "Classification == 2"
+    },
+    {
+      "type": "writers.las",
+      "filename": "/home/prodair/Desktop/MORIUS5090/clustering/test_class2.laz",
+      "compression": true,
+      "forward": "all"
+    }
+  ]
+}

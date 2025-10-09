@@ -1,0 +1,10 @@
+{
+  "pipeline": [
+    "CHUNK_LIST_PLACEHOLDER",
+    {
+      "type": "filters.stats",
+      "dimensions": "Classification",
+      "enumerate": "Classification"
+    }
+  ]
+}

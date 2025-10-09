@@ -14,20 +14,38 @@ import math
 from scipy.spatial import ConvexHull, cKDTree
 from sklearn.cluster import DBSCAN
 
-def extract_vegetation_polygons_enhanced(chunk_name):
+def extract_vegetation_polygons_enhanced(chunk_path):
     """
     Enhanced vegetation extraction using footprint-based polygon generation
     Optimized for natural vegetation boundaries with curved edges
+
+    Args:
+        chunk_path: Path to chunk directory (e.g., /path/to/chunk_1 or /path/to/chunk_1/compressed/filtred_by_classes)
     """
+    # Normalize the path - detect if it's the chunk root or filtred_by_classes
+    chunk_path = os.path.abspath(chunk_path)
+
+    if chunk_path.endswith('/compressed/filtred_by_classes'):
+        # Path is already pointing to filtred_by_classes
+        classes_base = chunk_path
+        chunk_name = os.path.basename(os.path.dirname(os.path.dirname(chunk_path)))
+    elif os.path.exists(os.path.join(chunk_path, 'compressed/filtred_by_classes')):
+        # Path is chunk root directory
+        classes_base = os.path.join(chunk_path, 'compressed/filtred_by_classes')
+        chunk_name = os.path.basename(chunk_path)
+    else:
+        print(f"❌ Invalid path structure. Expected chunk directory or filtred_by_classes directory")
+        return 0
+
     print(f"\n🌿 === ENHANCED VEGETATION POLYGON EXTRACTION ===")
     print(f"📍 Chunk: {chunk_name}")
+    print(f"📂 Base path: {classes_base}")
     print(f"🎯 Method: Natural boundary detection + curved polygons")
     print(f"📊 Extracting vegetation areas...")
 
     # Paths
-    base_path = "/home/prodair/Desktop/clustering/datasetclasified/new_data/new_data"
-    vegetation_laz = f"{base_path}/{chunk_name}/compressed/filtred_by_classes/8_OtherVegetation/8_OtherVegetation.laz"
-    output_dir = f"{base_path}/{chunk_name}/compressed/filtred_by_classes/8_OtherVegetation/polygons"
+    vegetation_laz = f"{classes_base}/8_OtherVegetation/8_OtherVegetation.laz"
+    output_dir = f"{classes_base}/8_OtherVegetation/polygons"
     output_file = f"{output_dir}/8_OtherVegetation_polygons.geojson"
 
     # Check if vegetation data exists
@@ -475,19 +493,20 @@ def has_overlap_with_existing(new_polygon, existing_polygons, threshold=0.1):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 python_vegetation_enhanced.py <chunk_name>")
-        print("Example: python3 python_vegetation_enhanced.py chunk_1")
+        print("Usage: python3 python_vegetation_enhanced.py <chunk_path>")
+        print("Examples:")
+        print("  python3 python_vegetation_enhanced.py /path/to/chunk_1")
+        print("  python3 python_vegetation_enhanced.py /path/to/chunk_1/compressed/filtred_by_classes")
         sys.exit(1)
 
-    chunk_name = sys.argv[1]
+    chunk_path = sys.argv[1]
 
-    # Validate chunk name
-    valid_chunks = [f"chunk_{i}" for i in range(1, 7)]
-    if chunk_name not in valid_chunks:
-        print(f"❌ Invalid chunk name. Must be one of: {', '.join(valid_chunks)}")
+    # Validate path exists
+    if not os.path.exists(chunk_path):
+        print(f"❌ Path not found: {chunk_path}")
         sys.exit(1)
 
-    result = extract_vegetation_polygons_enhanced(chunk_name)
+    result = extract_vegetation_polygons_enhanced(chunk_path)
 
     if result > 0:
         print(f"\n🎉 Success! Extracted {result} vegetation areas")

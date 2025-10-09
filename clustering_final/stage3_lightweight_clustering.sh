@@ -83,9 +83,9 @@ declare -A MIN_POINTS=(
 )
 
 # High-performance classes (suitable for lightweight clustering)
-# OPTIMIZED: Only process Trees and Masts (skip all other classes)
+# OPTIMIZED: Process Trees, Masts, Traffic Lights, and Traffic Signs
 CLUSTER_CLASSES=(
-    "7_Trees" "12_Masts"
+    "7_Trees" "12_Masts" "9_TrafficLights" "10_TrafficSigns"
 )
 
 # ==============================================================================
@@ -147,7 +147,8 @@ cluster_class_lightweight() {
     log "INFO" "    Parameters: tolerance=${tolerance}m (2D), min_points=$min_points"
 
     # Create output directory
-    local centroids_dir="$(dirname "$class_file")/centroids"
+    local class_dir="$(dirname "$class_file")"
+    local centroids_dir="$class_dir/centroids"
     mkdir -p "$centroids_dir"
 
     # Get input analysis (simplified and robust)

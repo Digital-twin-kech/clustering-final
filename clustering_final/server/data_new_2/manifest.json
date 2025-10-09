@@ -1,0 +1,94 @@
+{
+  "dataset_info": {
+    "name": "Berkan LiDAR Dataset Processing Results",
+    "source": "/home/prodair/Downloads/data-last-berkan/data-last-berkan",
+    "processing_date": "2025-10-01",
+    "chunks_processed": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "coordinate_system": "UTM Zone 29N (EPSG:32629)",
+    "region": "Western Morocco"
+  },
+  "processing_summary": {
+    "total_chunks": 9,
+    "chunks_available": [
+      "chunk_10",
+      "chunk_11",
+      "chunk_12",
+      "chunk_13",
+      "chunk_14",
+      "chunk_15",
+      "chunk_16",
+      "chunk_17",
+      "chunk_9"
+    ],
+    "classes_processed": [
+      "Trees",
+      "Masts",
+      "Buildings",
+      "Vegetation",
+      "Wires"
+    ],
+    "processing_methods": {
+      "trees": "Lightweight 2D projection clustering (DBSCAN)",
+      "masts": "Lightweight 2D projection clustering (DBSCAN)",
+      "buildings": "Enhanced footprint-based polygon extraction (alpha shapes)",
+      "vegetation": "Natural boundary detection with curved polygons (concave hull)",
+      "wires": "Height-aware 3D line segmentation (PCA-based)"
+    }
+  },
+  "data_structure": {
+    "centroids": {
+      "description": "Point features (Trees + Masts)",
+      "count": 18,
+      "format": "JSON with UTM coordinates"
+    },
+    "polygons": {
+      "buildings": {
+        "description": "Building footprint polygons",
+        "count": 9,
+        "format": "GeoJSON with UTM coordinates"
+      },
+      "vegetation": {
+        "description": "Vegetation area polygons",
+        "count": 9,
+        "format": "GeoJSON with UTM coordinates"
+      }
+    },
+    "lines": {
+      "wires": {
+        "description": "Wire infrastructure lines",
+        "count": 9,
+        "format": "GeoJSON LineString with UTM coordinates"
+      }
+    }
+  },
+  "statistics": {
+    "files_total": 45,
+    "centroids_files": 18,
+    "polygon_files": 18,
+    "line_files": 9,
+    "data_quality": "High - comprehensive processing with strict quality filters"
+  },
+  "coordinate_conversion": {
+    "input": "UTM Zone 29N (EPSG:32629)",
+    "output": "WGS84 (EPSG:4326) for web visualization",
+    "transformation": "Automatic via server-side conversion"
+  },
+  "file_naming_convention": {
+    "pattern": "berkan_chunk_<N>_<class>_<type>.<ext>",
+    "examples": [
+      "berkan_chunk_9_7_Trees_centroids.json",
+      "berkan_chunk_10_buildings_polygons.geojson",
+      "berkan_chunk_11_wires_lines.geojson"
+    ]
+  }
+}

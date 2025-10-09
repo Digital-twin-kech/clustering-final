@@ -1,0 +1,35 @@
+{
+  "class": "7_Trees",
+  "class_id": 7,
+  "chunk": "chunk_17",
+  "clustering_method": "2D_projection_lightweight",
+  "parameters": {
+    "tolerance_2d": 4.0,
+    "min_points": 30,
+    "z_axis_eliminated": true
+  },
+  "utm_bounds": {
+    "min_x": 1110358.627,
+    "max_x": 1110381.637,
+    "min_y": 3884749.03,
+    "max_y": 3884805.174,
+    "min_z": 215.408,
+    "max_z": 223.382
+  },
+  "results": {
+    "input_points": 399517,
+    "clustered_points": 3754,
+    "instances_found": 1,
+    "coverage_percent": 0.9
+  },
+  "centroids": [
+    {
+      "object_id": 1,
+      "cluster_id": 1,
+      "centroid_x": 1110365.767,
+      "centroid_y": 3884772.534,
+      "centroid_z": 219.836,
+      "point_count": 3754
+    }
+  ]
+}

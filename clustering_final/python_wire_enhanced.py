@@ -16,20 +16,38 @@ from sklearn.cluster import DBSCAN
 from sklearn.linear_model import RANSACRegressor
 from sklearn.preprocessing import PolynomialFeatures
 
-def extract_wire_lines_enhanced(chunk_name):
+def extract_wire_lines_enhanced(chunk_path):
     """
     Enhanced wire extraction using line-based segmentation
     Optimized for continuous linear wire structures
+
+    Args:
+        chunk_path: Path to chunk directory (e.g., /path/to/chunk_1 or /path/to/chunk_1/compressed/filtred_by_classes)
     """
+    # Normalize the path - detect if it's the chunk root or filtred_by_classes
+    chunk_path = os.path.abspath(chunk_path)
+
+    if chunk_path.endswith('/compressed/filtred_by_classes'):
+        # Path is already pointing to filtred_by_classes
+        classes_base = chunk_path
+        chunk_name = os.path.basename(os.path.dirname(os.path.dirname(chunk_path)))
+    elif os.path.exists(os.path.join(chunk_path, 'compressed/filtred_by_classes')):
+        # Path is chunk root directory
+        classes_base = os.path.join(chunk_path, 'compressed/filtred_by_classes')
+        chunk_name = os.path.basename(chunk_path)
+    else:
+        print(f"❌ Invalid path structure. Expected chunk directory or filtred_by_classes directory")
+        return 0
+
     print(f"\n⚡ === ENHANCED WIRE LINE EXTRACTION ===")
     print(f"📍 Chunk: {chunk_name}")
+    print(f"📂 Base path: {classes_base}")
     print(f"🎯 Method: Line segmentation + height-aware clustering")
     print(f"📊 Extracting wire lines...")
 
     # Paths
-    base_path = "/home/prodair/Desktop/clustering/datasetclasified/new_data/new_data"
-    wire_laz = f"{base_path}/{chunk_name}/compressed/filtred_by_classes/11_Wires/11_Wires.laz"
-    output_dir = f"{base_path}/{chunk_name}/compressed/filtred_by_classes/11_Wires/lines"
+    wire_laz = f"{classes_base}/11_Wires/11_Wires.laz"
+    output_dir = f"{classes_base}/11_Wires/lines"
     output_file = f"{output_dir}/11_Wires_lines.geojson"
 
     # Check if wire data exists
@@ -297,14 +315,21 @@ def extract_wire_lines_enhanced(chunk_name):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python3 python_wire_enhanced.py <chunk_name>")
-        print("Example: python3 python_wire_enhanced.py chunk_1")
+        print("Usage: python3 python_wire_enhanced.py <chunk_path>")
+        print("Examples:")
+        print("  python3 python_wire_enhanced.py /path/to/chunk_1")
+        print("  python3 python_wire_enhanced.py /path/to/chunk_1/compressed/filtred_by_classes")
         sys.exit(1)
 
-    chunk_name = sys.argv[1]
+    chunk_path = sys.argv[1]
+
+    # Validate path exists
+    if not os.path.exists(chunk_path):
+        print(f"❌ Path not found: {chunk_path}")
+        sys.exit(1)
 
     try:
-        result = extract_wire_lines_enhanced(chunk_name)
+        result = extract_wire_lines_enhanced(chunk_path)
         sys.exit(0 if result > 0 else 1)
     except KeyboardInterrupt:
         print(f"\n❌ Wire extraction interrupted")

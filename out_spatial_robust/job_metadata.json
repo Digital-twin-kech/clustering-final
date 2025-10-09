@@ -1,0 +1,21 @@
+{
+  "job_info": {
+    "created_at": "2025-09-18T14:11:18+01:00",
+    "input_file": "/home/prodair/Desktop/MORIUS5090/clustering/datasetclasified/berkane-classifier-mobile-mapping-flainet/berkane_-_classifier_-_mobile_mapping_flainet/cloud_point_part_1.laz",
+    "stage_completed": "stage1_spatial_chunking_robust"
+  },
+  "input_data": {
+    "total_points": 50000000,
+    "file_size": "319M",
+    "source": "berkane mobile mapping"
+  },
+  "spatial_analysis": {
+    "strategy": "north_south_route_segments",
+    "total_segments": 5,
+    "successful_chunks": 5,
+    "empty_regions": 0,
+    "total_points_captured": 49999998,
+    "coverage_percent": 99.9,
+    "data_distribution": "concentrated_in_southern_segment"
+  }
+}

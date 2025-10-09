@@ -3,7 +3,7 @@
 
 ## Executive Summary
 
-This project represents a revolutionary approach to large-scale LiDAR point cloud processing, developing from traditional 3D clustering methods to an innovative 2D lightweight processing pipeline that achieves **10x-100x performance improvements** while maintaining accuracy for object detection and classification.
+This project represents an approach to large-scale LiDAR point cloud processing, developing from traditional 3D clustering methods to an innovative 2D lightweight processing pipeline that achieves **10x-100x performance improvements** while maintaining accuracy for object detection and classification.
 
 ---
 

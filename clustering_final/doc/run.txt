@@ -1,0 +1,1 @@
+for i in {9..17}; do      /home/prodair/Desktop/MORIUS5090/clustering/clustering_final/stage2_class_filtering.sh /home/prodair/Downloads/data-last-berkan/data-last-berkan/cloud_point_part_${i}.laz; done
